@@ -20,18 +20,30 @@ If you want to learn more about Quarkus, please visit its website: <https://quar
    Generate your apploication and download zip file.
    Extract it and extracted content contains many file. just copy src and pom file
    Import projet into STS IDE.
-
-2. 
 ```
-
-
-
-## Running the application in dev mode
+## Running the application in dev mode(live reload)
 
 You can run your application in dev mode that enables live coding using:
 
 ```shell script
-./mvnw quarkus:dev
+1. mvn quarkus:dev
+
+2. mvn clean package
+   java -jar target/quarkus-app/quarkus-run.jar
+```
+
+## Running the application in STS IDE
+
+```shell script
+1. Create Main application class with main method as below.
+    @QuarkusMain
+    public class DempApplication {
+        
+        public static void main(String[] args) {
+            Quarkus.run(args);
+        }
+    }
+2. Right click run
 ```
 
 > **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at <http://localhost:8080/q/dev/>.
