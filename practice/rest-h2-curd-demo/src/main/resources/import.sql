@@ -1,0 +1,1 @@
+-- insert into user_table (id, fname, lname, age) values(10, 'raj', 'g', 40);
