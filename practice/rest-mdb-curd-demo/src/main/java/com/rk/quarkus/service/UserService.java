@@ -28,7 +28,7 @@ public class UserService {
 		return repository.listAll().stream().map(UserMapper::toDTO).collect(Collectors.toList());
 	}
 
-	public com.rk.quarkus.dto.User findById(@PathParam("id") Long id) {
+	public com.rk.quarkus.dto.User findById(Long id) {
 		User entity = repository.findById(id);
 		if (entity == null)
 			throw new NotFoundException();
@@ -43,7 +43,7 @@ public class UserService {
 	}
 
 	@Transactional
-	public com.rk.quarkus.dto.User update(@PathParam("id") Long id, com.rk.quarkus.dto.User updated) {
+	public com.rk.quarkus.dto.User update(Long id, com.rk.quarkus.dto.User updated) {
 		User entity = repository.findById(id);
 		if (entity == null) {
 			throw new NotFoundException();
@@ -53,7 +53,7 @@ public class UserService {
 	}
 
 	@Transactional
-	public void delete(@PathParam("id") Long id) {
+	public void delete(Long id) {
 		repository.deleteById(id);
 	}
 }
