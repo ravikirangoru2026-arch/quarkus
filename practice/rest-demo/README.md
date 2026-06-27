@@ -4,6 +4,28 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
 
+## Application Development
+
+```shell script
+1. Open https://quarkus.io/ in browser
+   group: com.rk.quarkus
+   artifacts: rest-demo
+   build: maven
+   version: ***
+   Java version: ***
+   Starter Code: Yes
+
+   Search extentions: web
+          select quarkus-rest, quarkus-rest-jackson
+   Generate your apploication and download zip file.
+   Extract it and extracted content contains many file. just copy src and pom file
+   Import projet into STS IDE.
+
+2. 
+```
+
+
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
