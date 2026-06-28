@@ -2,6 +2,24 @@
 
 Mariadb curd operations in blocking Hibernate ORM/Panache(Non Reactive mode)
 
+## Application development
+
+0. Create application with quarkus-rest, quarkus-rest-jackson, quarkus-jdbc-mariadb, quarkus-hibernate-orm-panache
+
+1. Required confiurations
+
+```shell script
+# MariaDB datasource
+quarkus.datasource.db-kind=mariadb
+quarkus.datasource.username=root
+quarkus.datasource.password=root
+quarkus.datasource.jdbc.url=jdbc:mariadb://localhost:3306/quarkus_db_1
+
+# Hibernate ORM
+quarkus.hibernate-orm.database.generation=update
+quarkus.hibernate-orm.log.sql=true
+
+```
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
@@ -11,6 +29,17 @@ You can run your application in dev mode that enables live coding using:
 ```
 
 > **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at <http://localhost:8080/q/dev/>.
+
+
+## Package and Run the application
+
+You can run your application in dev mode that enables live coding using:
+
+```shell script
+mvn clean install
+java -jar target/quarkus-app/quarkus-run.jar
+
+```
 
 ## Packaging and running the application
 

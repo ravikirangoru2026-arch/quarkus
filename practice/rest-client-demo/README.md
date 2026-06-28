@@ -54,7 +54,7 @@ quarkus.http.ssl.certificate.key-store-password=changeit
 quarkus.http.ssl.certificate.key-store-provider=PKCS12
 ```
 
-## Package and Run the application in dev mode
+## Package and Run the application and run in dev mode
 
 You can run your application in dev mode that enables live coding using:
 
@@ -62,6 +62,7 @@ You can run your application in dev mode that enables live coding using:
 mvn clean install
 java -jar target/quarkus-app/quarkus-run.jar
 
+Dev mode 
 mvn quarkus:dev
 
 ```
