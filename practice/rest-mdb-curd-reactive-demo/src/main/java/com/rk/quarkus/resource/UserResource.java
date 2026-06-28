@@ -1,4 +1,4 @@
-package com.rk.quarkus.resource;
+	package com.rk.quarkus.resource;
 
 import java.util.List;
 
@@ -6,7 +6,6 @@ import com.rk.quarkus.service.UserService;
 
 import io.quarkus.hibernate.reactive.panache.common.WithSession;
 import io.quarkus.hibernate.reactive.panache.common.WithTransaction;
-import io.smallrye.mutiny.Multi;
 import io.smallrye.mutiny.Uni;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;

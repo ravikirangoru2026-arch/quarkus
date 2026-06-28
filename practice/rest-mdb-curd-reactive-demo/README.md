@@ -4,12 +4,52 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
 
+## Application development
+
+0. Create application with the below extentions
+
+```shell script
+quarkus-rest : Core reactive REST support
+quarkus-rest-jackson : JSON support for reactive REST
+quarkus-reactive-mysql-client : MySQL and MariaDB reactive connections through the same underlying MySQL driver
+quarkus-hibernate-reactive-panache: Hibernate Reactive with Panache
+
+io.quarkus.hibernate.reactive.panache.PanacheEntityBase for reactive
+io.quarkus.hibernate.reactive.panache.PanacheRepository for reactive
+
+@WithSession: for reacd only API
+@WithTransaction for write operations like post, put delete..
+Uni<..> as return type all api & db service calls.
+```
+
+0. Application properties for reactive communication and Database table creation logic/scipt keep in imort.sql file
+
+```shell script
+quarkus.datasource.db-kind=mariadb
+quarkus.datasource.username=root
+quarkus.datasource.password=root
+quarkus.datasource.reactive.url=mysql://localhost:3306/quarkus_db_2
+
+quarkus.hibernate-orm.log.sql=true
+quarkus.hibernate-orm.sql-load-script=import.sql
+```
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
 
 ```shell script
 ./mvnw quarkus:dev
+```
+
+## Package and Run the application
+
+You can run your application in dev mode that enables live coding using:
+
+```shell script
+mvn clean install
+java -jar target/quarkus-app/quarkus-run.jar
+
 ```
 
 > **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at <http://localhost:8080/q/dev/>.
