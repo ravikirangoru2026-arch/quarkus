@@ -3,6 +3,7 @@ package com.rk.quarkus.service;
 import java.util.List;
 
 import com.rk.quarkus.entity.User;
+import com.rk.quarkus.exception.UserNotFoundException;
 import com.rk.quarkus.mapper.UserMapper;
 import com.rk.quarkus.repository.UserRepository;
 
@@ -31,8 +32,8 @@ public class UserService {
 
 	@WithSessionOnDemand
 	public Uni<com.rk.quarkus.dto.User> findById(Long id) {
-		Log.info("Find user by id :{}"+ id);
-		return repository.findById(id).onItem().ifNull().failWith(new NotFoundException()).onItem()
+		Log.info("Find user by id :"+ id);
+		return repository.findById(id).onItem().ifNull().failWith(new UserNotFoundException("User not found")).onItem()
 				.transform(UserMapper::toDTO);
 	}
 
